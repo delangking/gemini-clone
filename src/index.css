@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+/* ── Theme variables ──────────────────────────────────── */
+:root {
+  --bg-primary:    #ffffff;
+  --bg-secondary:  #f0f4f9;
+  --bg-hover:      #dfe4ea;
+  --bg-card:       #f0f4f9;
+  --text-primary:  #1e1e1e;
+  --text-secondary:#585858;
+  --text-muted:    #9aa0a6;
+  --accent:        #4b90ff;
+  --border:        #e2e5ea;
+  --shadow:        0 4px 16px rgba(0,0,0,0.09);
+  --code-bg:       #f1f3f4;
+  --sidebar-bg:    #f0f4f9;
+}
+
+[data-theme="dark"] {
+  --bg-primary:    #1e1f21;
+  --bg-secondary:  #2a2b2d;
+  --bg-hover:      #363739;
+  --bg-card:       #2a2b2d;
+  --text-primary:  #e3e3e3;
+  --text-secondary:#ababab;
+  --text-muted:    #6e6e6e;
+  --accent:        #82b4ff;
+  --border:        #3d3d3f;
+  --shadow:        0 4px 16px rgba(0,0,0,0.45);
+  --code-bg:       #18191b;
+  --sidebar-bg:    #2a2b2d;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Outfit, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Global code block styles (used by dangerouslySetInnerHTML) ── */
+.code-block {
+  background: var(--code-bg) !important;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  font-family: 'Courier New', Consolas, monospace;
+  font-size: 13.5px;
+  margin: 12px 0;
+  white-space: pre;
+  color: var(--text-primary);
+  display: block;
+}
+
+.inline-code {
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', Consolas, monospace;
+  font-size: 13px;
+  color: var(--accent);
+}
